@@ -8,16 +8,16 @@ from bs4 import BeautifulSoup
 from time import sleep
 
 # Define some things about the environment
-mcversion="1.18.1"
+mcversion="1.21.1"
 limit=100
-loader="fabric"
+loader="neoforge"
 
 def sendRequest(limit, offset):
     # Dictionary for get request
     request_data = {
     	"limit": limit,
     	"offset": offset,
-    	"filters": f"categories={loader} AND versions={mcversion}"
+    	"filters": f"categories={loader} AND game_versions={mcversion}"
     }
     # Deconstruct the dict into the url
     request_url = 'https://api.modrinth.com/v2/search?' + urllib.parse.urlencode(request_data)
